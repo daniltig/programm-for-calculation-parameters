@@ -1,0 +1,39 @@
+{
+   "name": "Calculation-of-the-list-of-parameters",
+   "version": "1.0.0",
+   "description": "",
+   "main": "main.js",
+   "scripts": {
+      "start": "electron .",
+      "build-win": "electron-builder -w",
+      "build-dir": "electron-builder -w --dir"
+   },
+   "author": "VZSP",
+   "license": "",
+   "build": {
+      "productName": "Расчёт списка параметров",
+      "win": {
+         "target": [
+            "nsis"
+         ],
+         "icon": "img/ico.png"
+      },
+      "nsis": {
+         "oneClick": false,
+         "perMachine": true,
+         "allowToChangeInstallationDirectory": true
+      },
+      "directories": {
+         "output": "сборки"
+      }
+   },
+   "dependencies": {
+      "docx": "^7.8.2",
+      "file-saver": "^2.0.5",
+      "jquery": "^3.6.0"
+   },
+   "devDependencies": {
+      "electron": "^21.3.1",
+      "electron-builder": "^23.6.0"
+   }
+}

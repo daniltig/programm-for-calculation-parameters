@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+
+      <title>Однорядные неразъёмные радиально-упорные шариковые подшипники</title>
+      <style>
+         html, body{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-content: space-around;
+            justify-content: flex-start;
+            align-items: center;
+            overflow-y: hidden;
+            flex-wrap:wrap;
+            background: #8e8f7c17;//Gainsboro;
+         }
+         label{
+            margin-bottom: 10px;
+            width: 420px;
+            display: flex;
+            justify-content: Space-between;
+            align-items: center;
+         }
+         label:hover{
+            background: #7778603e;
+         }
+         label[hidden]{
+            display: none;
+         }
+         input{
+            width: 100px;
+            height:20px;
+         }
+         button{
+            margin-bottom: 10px;
+            min-width: 100px;
+            min-height: 50px;
+            overflow: hidden;
+            //aspect-ratio: 2/1;
+            width: 100px;
+            height: auto;
+         }
+         h1{
+            width: 100px;
+         }
+         select{
+            width: 150px;
+            height: 20px;
+         }
+         textarea{
+            margin-bottom: 10px;
+            resize: none;
+            min-width: 400px;
+            //height: 500px;
+            white-space: pre;
+            width: calc(100% - 600px);
+         }
+         fieldset{
+            display: flex;
+            flex-direction: column;
+            align-content: space-around;
+            justify-content: flex-start;
+            align-items: center;
+         }
+         fieldset[hidden]{
+            display: none;
+         }
+         fieldset{
+            padding: 0px;
+            margin: 0px;
+            border: 0px solid red;
+         }
+         #mainDiv{
+            height:95%;
+            width:auto;
+            display: flex;
+            flex-direction: column;
+            align-content: space-around;
+            justify-content: flex-start;
+            align-items: center;
+            overflow-y: hidden;
+            flex-wrap: nowrap;
+            overflow-y: auto;
+         }
+         .divWithDev{
+            display: flex;
+            flex-direction: row;
+            align-content: space-around;
+            justify-content: flex-start;
+            align-items: center;
+         }
+         .divDev{
+            display: flex;
+            flex-direction: column;
+            align-content: space-around;
+            justify-content: flex-start;
+            align-items: flex-start;
+         }
+         .dev{
+            width: 40px;
+            height: 10px;
+            font-size: 80%;
+            //border: 0px solid white;
+         }
+         .dev:focus{
+            width: 80px;
+            height: 20px;
+            font-size: 100%;
+            //border: 0px solid white;
+         }
+         .divWithDivs{
+            display: flex;
+            flex-direction: row;
+            align-content: space-around;
+            justify-content: flex-start;
+            align-items: center;
+         }
+         .divWithButton{
+            display: flex;
+            flex-direction: row;
+            align-content: space-around;
+            justify-content: flex-start;
+            align-items: center;
+         }
+         .divWithButton[hidden]{
+            display: none;
+         }
+         #div_separator, #div_ChambersAndMarking, #div_Mass{
+            //border-top: 1px solid black;
+         }
+      </style>
+      <script src="src\Requests from main window.js"></script>
+
+      <link href="SliderDiv.css" rel="stylesheet">
+
+      <link href="RegisterCustomElement.css" rel="stylesheet">
+      <script src="RegisterCustomElement.js"></script>
+
+
+      <script  src="src/Variables.js"></script>
+      <script  src="src/Selects_arrays.js"></script>
+      <script  src="src/SelectsEvents.js"></script>
+      <script  src="src/Trigonometric_Functions.js"></script>
+      <script  src="src/Calculation.js"></script>
+      <script  src="src/OutputVariables.js"></script>
+      <script  src="src\Additional functions.js"></script>
+      <script  src="src/Buttons Events.js"></script>
+      <script  src="src/Fill.js"></script>
+      <script  src="src/Tests.js"></script>
+      <script  src="src/OutputWord.js"></script>
+      <script  src="src\ListButtonFor my_divwithvariables.js"></script>
+
+   </head>
+   <body onload="console.log()">
+      <div  id="mainDiv">
+         <fieldset class="fieldsetLevel1">
+            <label>a    <input type="text" id="input_a"></label>
+            <label>b    <input type="text" id="input_b"></label>
+            <label>c    <input type="text" id="input_c"></label>
+            <label>select_1    <select id="select_1"></select></label>
+            <label>d
+               <div class="divWithDev">
+                  <input type="text" id="input_d">
+                  <div class="divDev">
+                     <input type="text" id="input_d_MaxDev" class="dev">
+                     <input type="text" id="input_d_MinDev" class="dev">
+                  </div>
+               </div>
+            </label>
+         </fieldset>
+         <fieldset class="fieldsetLevel1" hidden>
+            <label>e    <input type="text" id="input_e"></label>
+         </fieldset>
+
+         <div class="divWithButton">
+            <button is="my-button" class="buttonCalc" id="button_calc2" onclick="button_calc2_onclick(event)" oncontextmenu="button_calc2_onclickRignt(event)" title="Левая кнопка мыши: быстрый возврат &#10;Правая кнопка мыши: пошаговый возврат" disabled>Назад</button>
+            <button is="my-button" class="buttonCalc" id="button_calc1" onclick="button_calc1_onclick(event)" oncontextmenu="button_calc1_onclickRignt(event)" title="Левая кнопка мыши: быстрый расчёт &#10;Правая кнопка мыши: пошаговый расчёт">Рассчитать</button>
+         </div>
+
+         <fieldset id="div3" class="mDiv" hidden>
+            <div class="divWithFlippingThroughButtons">
+               <button id="selectFlippingThroughButton" class="flippingThroughButtons clickFlippingThroughButton" data-tooltip="Сепаратор"></button>
+               <button class="flippingThroughButtons" data-tooltip="Фаски&nbspи&nbspмаркировка"></button>
+               <button class="flippingThroughButtons" data-tooltip="Масса"></button>
+            </div>
+            <div id="div0" class="divWithFlippingThroughSlides">
+               <div class="flippingThroughSlides">
+                  <fieldset class="fieldsetLevel2">
+                     <label>f    <input type="text" id="input_f"></select></label>
+                  </fieldset>
+
+                  <div class="divWithButton" id="divWithButton2">
+                     <button is="my-button" class="buttonCalc" id="button_calc4" onclick="button_calc4_onclick(event)" oncontextmenu="button_calc4_onclickRignt(event)" title="Левая кнопка мыши: быстрый возврат &#10;Правая кнопка мыши: пошаговый возврат" disabled>Назад</button>
+                     <button is="my-button" class="buttonCalc" id="button_calc3" onclick="button_calc3_onclick(event)" oncontextmenu="button_calc3_onclickRignt(event)" title="Левая кнопка мыши: быстрый расчёт &#10;Правая кнопка мыши: пошаговый расчёт">Рассчитать сепаратор</button>
+                  </div>
+               </div>
+
+               <div class="flippingThroughSlides">
+                  <fieldset class="fieldsetLevel3">
+                     <label>g   <input type="text" id="input_g"></label>
+                  </fieldset>
+
+                  <div class="divWithButton" id="divWithButton3">
+                     <button is="my-button" class="buttonCalc" id="button_calc6" onclick="button_calc6_onclick(event)" oncontextmenu="button_calc6_onclickRignt(event)" title="Левая кнопка мыши: быстрый возврат &#10;Правая кнопка мыши: пошаговый возврат" disabled>Назад</button>
+                     <button is="my-button" class="buttonCalc" id="button_calc5" onclick="button_calc5_onclick(event)" oncontextmenu="button_calc5_onclickRignt(event)" title="Левая кнопка мыши: быстрый расчёт &#10;Правая кнопка мыши: пошаговый расчёт">Рассчитать фаски и маркировку</button>
+                  </div>
+               </div>
+
+               <div class="flippingThroughSlides">
+                  <fieldset class="fieldsetLevel4">
+                     <label>h   <input type="text" id="input_h"></label>
+                  </fieldset>
+
+                  <div class="divWithButton" id="divWithButton4">
+                     <button is="my-button" class="buttonCalc" id="button_calc8" onclick="button_calc8_onclick(event)" oncontextmenu="button_calc8_onclickRignt(event)" title="Левая кнопка мыши: быстрый возврат &#10;Правая кнопка мыши: пошаговый возврат" disabled>Назад</button>
+                     <button is="my-button" class="buttonCalc" id="button_calc7" onclick="button_calc7_onclick(event)" oncontextmenu="button_calc7_onclickRignt(event)" title="Левая кнопка мыши: быстрый расчёт &#10;Правая кнопка мыши: пошаговый расчёт">Рассчитать массу</button>
+                  </div>
+               </div>
+            </div>
+         </fieldset>
+
+
+         <div is="my-divwithvariables"  id="myDivWithVariables1" hidden></div>
+      </div>
+
+      <div class="divTextarea" id="myCustomTextarea">
+         <div is="my-input" username="..." id="myInput1" class="myInputLevel1" hidden></div>
+         <div is="my-input" username="..." id="myInput2" class="myInputLevel1" hidden></div>
+
+         <div is="my-input" username="Расчёт 3" id="myInput3" class="myInputLevel2" hidden></div>
+
+         <div is="my-input" username="Расчёт 4" id="myInput4" class="myInputLevel3" hidden></div>
+
+         <div is="my-input" username="Расчёт 5" id="myInput5" class="myInputLevel4" hidden></div>
+      </div>
+      <button id="button_CreateWordDocument" onclick="f_GetDirectory()">Создать отчёт WORD</button>
+
+      <div style="margin: 10px; position: absolute; bottom: 0px; left: 0px; ">
+         Версия:
+         <script>
+            document.currentScript.parentNode.innerHTML += require('./package.json').version;
+         </script>
+      </div>
+
+      <script>
+         FillSelect(select_1, arr_1);
+
+         //Test4();
+      </script>
+
+
+      <script src="SliderDiv.js"></script>
+   </body>
+</html>

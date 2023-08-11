@@ -1,0 +1,100 @@
+.flippingThroughSlides{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   width: auto;
+   height: auto;
+   margin: 0;
+   padding: 0;
+   flex-shrink: 0;
+   //border: 1px dotted black;
+}
+
+.divWithFlippingThroughSlides{
+   display: flex;
+   overflow: hidden;
+
+   margin: 0;
+   padding: 0;
+
+   width: 420px;
+   height: auto;
+   //border: 1px dotted red;
+}
+
+.divWithFlippingThroughButtons{
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   width: 110px;
+   height: 30px;
+   //border: 2px dotted red;
+}
+
+.mDiv{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   overflow-x: hidden;
+
+   margin: 0;
+   padding: 0;
+
+   width: auto;
+   height: auto;
+   //border: 2px dotted yellow;
+}
+
+.flippingThroughButtons{
+   --flippingThroughButtonsHeight: 20px;
+   border-color: LightGrey;
+   width: 20px;
+   height: var(--flippingThroughButtonsHeight);
+   min-width: 0px;
+   min-height: 0px;
+   border-radius: 10px;
+   //opacity: 0.5;
+   margin: 0;
+   padding: 0;
+}
+
+.flippingThroughButtons:hover{
+   background: Gainsboro;
+   overflow: visible;
+}
+
+
+
+.flippingThroughButtons:after{
+   --flippingThroughButtonsPadding: 2px;
+   content: attr(data-tooltip);
+   display: none;
+   position: relative;
+   z-index: 9998;
+   top:2px;
+   top: calc(var(--flippingThroughButtonsHeight) + var(--flippingThroughButtonsPadding));
+   //left: 50px;
+   background: red;
+   //text-align: center;
+   color: #000;
+   cursor: default;
+   padding: var(--flippingThroughButtonsPadding);
+   margin: 0; /*регулирует положение, значения зависят от применяемой конструкции*/
+   width: auto;
+   height: auto;
+   background: #ccccff; /*сцет заднего фона светло серый*/
+   border: 1px solid brown; /*стиль границы*/
+   border-radius: 5px; /*скугление углов*/
+
+   left: 50%; /*смещение на половину ширины родителя*/
+   transform: translate(-50%); /*смещение в обратную сторону на половину собственной ширины*/
+}
+
+.flippingThroughButtons:hover:after{
+   display: inline-block;
+}
+
+.clickFlippingThroughButton{
+   border-color: red;
+}

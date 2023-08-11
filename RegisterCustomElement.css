@@ -1,0 +1,116 @@
+.divTextarea {
+   //position: absolute;
+   width: 400px;
+   //height: 90%;
+   height: 800px;
+   border: 1px dashed black;
+   display: flex;
+   flex-direction: column;
+   overflow-y: auto;
+
+
+   margin: 0px;
+   padding: 0px;
+}
+.divTextarea{
+   margin-bottom: 10px;
+   resize: none;
+   min-width: 400px;
+   height: 90%;
+   white-space: pre;
+   width: calc(100% - 600px);
+}
+.divTextarea>*{
+   flex-shrink: 0;
+}
+.inputDivTextarea{
+   width: 100%;
+   height: auto;
+   border-top: 1px dashed black;
+   border-bottom: 1px dashed black;
+   display: flex;
+   flex-direction: column;
+   transition: height 0.5s linear 0s;
+   overflow-y: hidden;
+   flex-shrink: 0;
+
+   margin: 0px;
+   padding: 0px;
+}
+.inputDivTextarea[hidden]{
+   display: none;
+}
+.inputInputDivTextarea{
+   width: 100%;
+   height: auto;
+   //border-top: 1px dashed black;
+   //border-bottom: 1px dashed black;
+   display: flex;
+   flex-direction: column;
+   transition: height 0.5s linear 0s;
+   overflow-y: hidden;
+   overflow-x: auto;
+   flex-shrink: 0;
+
+   margin: 0px;
+   padding: 0px;
+}
+.afterDivTextarea{
+
+   width: 100%;
+   height: 20px;
+   min-height: 20px;
+   border-bottom: 1px dashed red;
+   display: flex;
+   justify-content: center;
+
+   margin: 0px;
+   padding: 0px;
+
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  /* отображаем курсор в виде руки при наведении; некоторые
+  считают, что необходимо оставлять стрелочный вид для кнопок */
+  cursor: pointer;
+
+  border-bottom: 1px dashed red;
+  background: rgba(211, 211, 211,0.5);
+}
+.spanInputDivTextarea{
+   --my-padding: 5px;
+   width: calc(100% - var(--my-padding));
+   height: auto;
+   min-height: 20px;
+   margin-left: var(--my-padding);
+   display: flex;
+   flex-direction: row;
+}
+
+.myDivWithVariables{
+   width: 400px;
+   //height: 90%;
+   min-height: 100px;
+   max-height: 125px;
+   border: 1px dashed black;
+   display: flex;
+   flex-direction: column;
+   overflow-y: auto;
+
+
+   margin: 0px;
+   padding: 0px;
+}
+.zxc{
+   width:100%;
+   height: 22px;
+   border: 1px dashed black;
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+.zxc[hidden]{
+   display: none;
+}
